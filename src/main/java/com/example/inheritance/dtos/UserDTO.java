@@ -3,7 +3,7 @@ package com.example.inheritance.dtos;
 import java.time.LocalDate;
 
 public class UserDTO {
-    private int id;
+    private int idUser;
     private String name;
     private String lastname;
     private String gender;
@@ -13,11 +13,12 @@ public class UserDTO {
     private String email;
     private String dni;
     private boolean status;
-    public int getId() {
-        return id;
+
+    public int getIdUser() {
+        return idUser;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
     public String getName() {
         return name;

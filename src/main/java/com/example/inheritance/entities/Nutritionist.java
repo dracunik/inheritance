@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "nutritionists")
-@PrimaryKeyJoinColumn(referencedColumnName = "id")
+@PrimaryKeyJoinColumn(name = "idNutritionist", referencedColumnName = "idUser")
 public class Nutritionist extends User{
     @Column(name = "salary", nullable = false)
     private double salary;
@@ -17,8 +17,8 @@ public class Nutritionist extends User{
 
     public Nutritionist() {
     }
-    public Nutritionist(int id, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean status, double salary, int yearsWorking) {
-        super(id, name, lastname, gender, age, birthDate, cellphone, email, dni, status);
+    public Nutritionist(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean status, double salary, int yearsWorking) {
+        super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, status);
         this.salary = salary;
         this.yearsWorking = yearsWorking;
     }
