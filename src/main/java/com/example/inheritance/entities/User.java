@@ -28,11 +28,13 @@ public class User {
     private String dni;
     @Column(name = "status", nullable = false)
     private boolean status;
+    @ManyToOne
+    @JoinColumn(name = "idRole")
+    private Role role;
 
     public User() {
     }
-
-    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean status) {
+    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean status, Role role) {
         this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
@@ -43,6 +45,7 @@ public class User {
         this.email = email;
         this.dni = dni;
         this.status = status;
+        this.role = role;
     }
 
     public int getIdUser() {
@@ -104,5 +107,11 @@ public class User {
     }
     public void setStatus(boolean status) {
         this.status = status;
+    }
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

@@ -13,6 +13,6 @@ import javax.transaction.Transactional;
 public interface IOwnerRepository extends JpaRepository<Owner, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Owner o SET o.status = false WHERE o.id =:id")
+    @Query("UPDATE Owner o SET o.status = false WHERE o.idUser =:id")
     void disable(@Param("id") Integer id);
 }

@@ -1,5 +1,7 @@
 package com.example.inheritance.dtos;
 
+import com.example.inheritance.entities.Role;
+
 import java.time.LocalDate;
 
 public class UserDTO {
@@ -13,6 +15,7 @@ public class UserDTO {
     private String email;
     private String dni;
     private boolean status;
+    private Role role;
 
     public int getIdUser() {
         return idUser;
@@ -73,5 +76,11 @@ public class UserDTO {
     }
     public void setStatus(boolean status) {
         this.status = status;
+    }
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
